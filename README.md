@@ -1,50 +1,59 @@
-# Welcome to your Expo app 👋
+Beril Tracker 🍼✨
+Beril Tracker, ebeveynlerin bebeklerinin günlük rutinlerini (emzirme, biberon, uyku ve bez değişimi) anlık olarak takip edebilmesi için geliştirilmiş çapraz platform (Cross-Platform) bir mobil/web uygulamasıdır.
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Başlangıçta yerel bir Kotlin & SQLite uygulaması olarak geliştirilen proje; gerçek zamanlı veri senkronizasyonu ve hem Android hem de iOS cihazlarda (PWA aracılığıyla) kesintisiz kullanım ihtiyacı doğrultusunda React Native (Expo) ve Firebase altyapısına taşınmıştır. Eski Kotlin verileri özel bir Node.js scripti ile Firestore'a entegre edilmiştir.
 
-## Get started
+🚀 Öne Çıkan Özellikler
+Gerçek Zamanlı Senkronizasyon: Firebase Firestore sayesinde eşlerden biri veri girdiğinde diğer cihazlarda anında güncellenir.
 
-1. Install dependencies
+Çapraz Platform (Cross-Platform): Android için native .apk çıktısı, iOS/Safari için PWA (Progressive Web App) desteği ile "Ana Ekrana Ekle" uyumluluğu.
 
-   ```bash
-   npm install
-   ```
+Detaylı Kayıt Yönetimi: * Emzirme: Sol/Sağ taraf takibi ve kronometre bazlı süre hesaplaması.
 
-2. Start the app
+Süt (Sağım/Biberon): Mililitre (ml) bazında tüketim takibi.
 
-   ```bash
-   npx expo start
-   ```
+Bez: Durum bazlı (Az Çişli, Çok Çişli, Kakalı) kayıt.
 
-In the output, you'll find options to open the app in a
+Uyku: Başlangıç ve bitiş saatlerine göre toplam uyku süresi.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+Akıllı Tahminler (Beril Algoritması): Son beslenme ve uyku verilerine dayanarak tahmini acıkma süresini, uyanıklık süresini ve bir sonraki emzirmede hangi tarafın öncelikli olması gerektiğini hesaplar.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+Gelişim İstatistikleri: Geçmiş 7 güne ait süt/emzirme tüketim grafikleri ve günlük toplam uyku saati raporları.
 
-## Get a fresh project
+🛠️ Teknoloji Yığını (Tech Stack)
+Frontend: React Native, Expo, React Hooks
 
-When you're ready, run:
+Backend & Veritabanı: Firebase (Firestore)
 
-```bash
-npm run reset-project
-```
+Hosting (Web & PWA): Firebase Hosting
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Tarih/Zaman Yönetimi: date-fns
 
-## Learn more
+İkonlar & UI: @expo/vector-icons (MaterialCommunityIcons), @react-native-community/datetimepicker
 
-To learn more about developing your project with Expo, look at the following resources:
+📦 Kurulum ve Çalıştırma
+Projeyi yerel ortamında (lokal) çalıştırmak için aşağıdaki adımları izleyebilirsiniz:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Depoyu klonlayın:
 
-## Join the community
+Bash
+git clone https://github.com/KULLANICI_ADIN/BerilTrackerCross.git
+cd BerilTrackerCross
+Gerekli bağımlılıkları yükleyin:
 
-Join our community of developers creating universal apps.
+Bash
+npm install
+Firebase yapılandırmanızı ekleyin:
+Proje dizininde firebaseConfig.js dosyası oluşturun ve kendi Firebase kimlik bilgilerinizi (API Key, Project ID vb.) ekleyin.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Uygulamayı başlatın:
+
+Bash
+npx expo start
+Web Sürümü İçin Derleme (Export):
+
+Bash
+npx expo export --platform web
+firebase deploy --only hosting
+📝 Notlar
+Bu proje, kişisel bir ihtiyaçtan doğmuş olup, ebeveynlerin bebek bakım sürecindeki bilişsel yükünü hafifletmeyi ve veriye dayalı rutinler oluşturmayı amaçlamaktadır.
