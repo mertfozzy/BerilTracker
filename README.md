@@ -24,11 +24,5 @@ Initially developed as a local Kotlin & SQLite app, the project was migrated to 
 * **Date/Time Management:** `date-fns`
 * **Icons & UI:** `@expo/vector-icons` (MaterialCommunityIcons), `@react-native-community/datetimepicker`
 
-## 📦 Installation & Setup
-
-To run this project locally, follow these steps:
-
-### 1. Clone the Repository
-```bash
 git clone [https://github.com/YOUR_USERNAME/BerilTrackerCross.git](https://github.com/YOUR_USERNAME/BerilTrackerCross.git)
 cd BerilTrackerCross
