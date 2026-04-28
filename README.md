@@ -23,6 +23,3 @@ Initially developed as a local Kotlin & SQLite app, the project was migrated to 
 * **Hosting (Web & PWA):** Firebase Hosting
 * **Date/Time Management:** `date-fns`
 * **Icons & UI:** `@expo/vector-icons` (MaterialCommunityIcons), `@react-native-community/datetimepicker`
-
-git clone [https://github.com/YOUR_USERNAME/BerilTrackerCross.git](https://github.com/YOUR_USERNAME/BerilTrackerCross.git)
-cd BerilTrackerCross
