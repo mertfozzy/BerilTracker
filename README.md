@@ -1,59 +1,34 @@
-Beril Tracker 🍼✨
-Beril Tracker, ebeveynlerin bebeklerinin günlük rutinlerini (emzirme, biberon, uyku ve bez değişimi) anlık olarak takip edebilmesi için geliştirilmiş çapraz platform (Cross-Platform) bir mobil/web uygulamasıdır.
+# Beril Tracker 🍼✨
 
-Başlangıçta yerel bir Kotlin & SQLite uygulaması olarak geliştirilen proje; gerçek zamanlı veri senkronizasyonu ve hem Android hem de iOS cihazlarda (PWA aracılığıyla) kesintisiz kullanım ihtiyacı doğrultusunda React Native (Expo) ve Firebase altyapısına taşınmıştır. Eski Kotlin verileri özel bir Node.js scripti ile Firestore'a entegre edilmiştir.
+Beril Tracker is a cross-platform mobile and web application designed for parents to track their baby's daily routines (nursing, bottle feeding, sleep, and diaper changes) in real-time. 
 
-🚀 Öne Çıkan Özellikler
-Gerçek Zamanlı Senkronizasyon: Firebase Firestore sayesinde eşlerden biri veri girdiğinde diğer cihazlarda anında güncellenir.
+Initially developed as a local Kotlin & SQLite app, the project was migrated to **React Native (Expo)** and **Firebase** to enable real-time data synchronization and seamless cross-device usage (via PWA) on both Android and iOS. Legacy Kotlin data was successfully migrated to Firestore using a custom Node.js script.
 
-Çapraz Platform (Cross-Platform): Android için native .apk çıktısı, iOS/Safari için PWA (Progressive Web App) desteği ile "Ana Ekrana Ekle" uyumluluğu.
+## 🚀 Key Features
 
-Detaylı Kayıt Yönetimi: * Emzirme: Sol/Sağ taraf takibi ve kronometre bazlı süre hesaplaması.
+* **Real-Time Synchronization:** Powered by Firebase Firestore, any data logged by one parent instantly updates across all devices.
+* **Cross-Platform:** Native `.apk` build for Android, and PWA (Progressive Web App) support for iOS/Safari with "Add to Home Screen" capability.
+* **Detailed Log Management:**
+  * **Nursing:** Left/Right side tracking with stopwatch-based duration calculations.
+  * **Milk (Bottle):** Volume tracking in milliliters (ml).
+  * **Diaper:** Condition-based logging (Lightly Wet, Heavily Wet, Poopy).
+  * **Sleep:** Total sleep duration calculated from start and end times.
+* **Smart Forecasting (Beril's Algorithm):** Calculates the estimated time for the next feed, current awake window, and recommends the starting side for the next nursing session based on recent data.
+* **Development Statistics:** 7-day historical charts for milk/nursing consumption and daily total sleep hour reports.
 
-Süt (Sağım/Biberon): Mililitre (ml) bazında tüketim takibi.
+## 🛠️ Tech Stack
 
-Bez: Durum bazlı (Az Çişli, Çok Çişli, Kakalı) kayıt.
+* **Frontend:** React Native, Expo, React Hooks
+* **Backend & Database:** Firebase (Firestore)
+* **Hosting (Web & PWA):** Firebase Hosting
+* **Date/Time Management:** `date-fns`
+* **Icons & UI:** `@expo/vector-icons` (MaterialCommunityIcons), `@react-native-community/datetimepicker`
 
-Uyku: Başlangıç ve bitiş saatlerine göre toplam uyku süresi.
+## 📦 Installation & Setup
 
-Akıllı Tahminler (Beril Algoritması): Son beslenme ve uyku verilerine dayanarak tahmini acıkma süresini, uyanıklık süresini ve bir sonraki emzirmede hangi tarafın öncelikli olması gerektiğini hesaplar.
+To run this project locally, follow these steps:
 
-Gelişim İstatistikleri: Geçmiş 7 güne ait süt/emzirme tüketim grafikleri ve günlük toplam uyku saati raporları.
-
-🛠️ Teknoloji Yığını (Tech Stack)
-Frontend: React Native, Expo, React Hooks
-
-Backend & Veritabanı: Firebase (Firestore)
-
-Hosting (Web & PWA): Firebase Hosting
-
-Tarih/Zaman Yönetimi: date-fns
-
-İkonlar & UI: @expo/vector-icons (MaterialCommunityIcons), @react-native-community/datetimepicker
-
-📦 Kurulum ve Çalıştırma
-Projeyi yerel ortamında (lokal) çalıştırmak için aşağıdaki adımları izleyebilirsiniz:
-
-Depoyu klonlayın:
-
-Bash
-git clone https://github.com/KULLANICI_ADIN/BerilTrackerCross.git
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/YOUR_USERNAME/BerilTrackerCross.git](https://github.com/YOUR_USERNAME/BerilTrackerCross.git)
 cd BerilTrackerCross
-Gerekli bağımlılıkları yükleyin:
-
-Bash
-npm install
-Firebase yapılandırmanızı ekleyin:
-Proje dizininde firebaseConfig.js dosyası oluşturun ve kendi Firebase kimlik bilgilerinizi (API Key, Project ID vb.) ekleyin.
-
-Uygulamayı başlatın:
-
-Bash
-npx expo start
-Web Sürümü İçin Derleme (Export):
-
-Bash
-npx expo export --platform web
-firebase deploy --only hosting
-📝 Notlar
-Bu proje, kişisel bir ihtiyaçtan doğmuş olup, ebeveynlerin bebek bakım sürecindeki bilişsel yükünü hafifletmeyi ve veriye dayalı rutinler oluşturmayı amaçlamaktadır.
