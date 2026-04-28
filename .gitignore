@@ -41,3 +41,9 @@ app-example
 # generated native folders
 /ios
 /android
+
+# Firebase Gizli Bilgileri ve Özel Veriler
+serviceAccountKey.json
+firebaseConfig.js
+beril_logs.csv
+migrate.js
